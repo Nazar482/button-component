@@ -26,6 +26,7 @@ gulp default
 * *build/* - compiled files
 * *bower_components* - components we use in our project
 
+<<<<<<< HEAD
 * src/scss/base/ - base styles for page
 * src/scss/components/ - our button component
 * src/scss/mixins/ - our mixin for button component
@@ -33,3 +34,12 @@ gulp default
 * src/scss/main.scss - our main file with includes
 
 * src/templates/index.pug - our main file with markup
+=======
+* *src/scss/base/* - base styles for page
+* *src/scss/components/* - our button component
+* *src/scss/mixins/* - our mixin for button component
+* *src/scss/partials/* - base styles for header, footer
+* *src/scss/main.scss* - our main file with includes
+
+* *src/templates/index.pug* - our main file with markup
+>>>>>>> f6259c1b42c2b0cd780f71cfaa582ea3a6562538
