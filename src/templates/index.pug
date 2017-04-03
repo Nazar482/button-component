@@ -1,0 +1,38 @@
+extends partials/_base
+block title
+  | Index Page
+block style
+  link(rel='stylesheet', href='css/main.css')
+
+block content
+  section.section
+    h3.section__title Colors
+    button.button Click
+    button.button.button_green Click
+    button.button.button_red Click
+    button.button.button_gray Click
+    button.button.button_white Click
+  section.section
+    h3.section__title States
+    button.button.button_disabled Click
+    button.button.button_disabled-standard Click
+    button.button.button_loading Click
+  section.section
+    h3.section__title Sizes
+    button.button.button_large Click
+    button.button.button_medium Click
+    button.button.button_small Click
+  section.section
+    button.button.button_red.button_large Click
+    button.button.button_red.button_medium Click
+    button.button.button_red.button_small Click
+  section.section
+    button.button.button_green.button_large Click
+    button.button.button_green.button_medium Click
+    button.button.button_green.button_small Click
+  section.section
+    h3.section__title Anchors & Simple text
+    a(href="#").button Click
+    span.button Click
+block script
+  script(src="js/main.js")

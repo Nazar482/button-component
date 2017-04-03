@@ -1,0 +1,72 @@
+/*base button variables */
+$button-color: #ffffff;
+$button-hover-color: #ffffff;
+$button-border-color: #ffffff;
+$button-padding: .4em 1em;
+$button-border-radius: 5px;
+$button-background-color: #59d;
+
+.button {
+  @include button($button-background-color, $button-color, $button-hover-color, $button-padding, $button-border-radius );
+  font-size: 1rem;
+  font-family: $open-sans;
+  border: none;
+  text-decoration: none;
+
+  /* colors */
+  &_green {
+    @include button(#6b6, #fff, #fff, $button-padding, $button-border-radius );
+  }
+
+  &_red {
+    @include button(#d33, #fff, #fff, $button-padding, $button-border-radius );
+  }
+
+  &_gray {
+    @include button(#555, #fff, #fff, $button-padding, $button-border-radius );
+  }
+
+  &_white {
+    @include button(#f5f5f5, #555, #555, $button-padding, $button-border-radius );
+  }
+
+  /*states*/
+
+  &_disabled {
+    @include button(lighten(#59d, 30%), #fff, #fff, $button-padding, $button-border-radius );
+    cursor: not-allowed;
+    &:hover{
+      background: lighten(#59d, 30%)
+    }
+  }
+
+  &_disabled-standard {
+    @include button(#59d, #fff, #fff, $button-padding, $button-border-radius );
+    cursor: not-allowed;
+    &:hover{
+      background: #59d;
+    }
+  }
+
+  &_loading {
+    @include button(#59d, #fff, #fff, $button-padding, $button-border-radius );
+    cursor: wait;
+    &:hover{
+      background: #59d;
+    }
+  }
+
+  /*sizes*/
+
+  &_large {
+    padding: .6em 3em;
+  }
+
+  &_medium {
+    padding: .4em 1em;
+  }
+
+  &_small {
+    padding: .2em .8em;
+  }
+}

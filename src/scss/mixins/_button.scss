@@ -1,0 +1,16 @@
+/*mixin for buttons*/
+@mixin button($background-color, $color, $hover-color, $padding, $border-radius ) {
+  background: $background-color;
+  color: $color;
+  padding: $padding;
+  border-radius: $border-radius;
+  &:hover {
+    background: darken($background-color,8%);
+    color: $hover-color;
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($background-color,25%);
+    color: $hover-color;
+  }
+}

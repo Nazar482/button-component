@@ -1,0 +1,22 @@
+//normalizer
+@import "../../bower_components/normalize.css/normalize";
+
+//fonts
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+//mixins
+@import "mixins/_button";
+//base
+@import "base/_variables";
+@import "base/_base.scss";
+
+//partials
+@import "partials/_header.scss";
+@import "partials/_footer.scss";
+
+//components
+@import "components/section";
+@import "components/button";
+
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+
