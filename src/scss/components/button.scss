@@ -40,26 +40,26 @@ $button-white-background-color: #f5f5f5;
   /*states*/
 
   &_disabled {
-    @include button(lighten(#59d, 30%), #fff, #fff, $button-padding, $button-border-radius );
+    @include button(lighten($button-background-color, 30%), $button-color, $button-color, $button-padding, $button-border-radius );
     cursor: not-allowed;
     &:hover{
-      background: lighten(#59d, 30%)
+      background: lighten($button-background-color, 30%)
     }
   }
 
   &_disabled-standard {
-    @include button(#59d, #fff, #fff, $button-padding, $button-border-radius );
+    @include button($button-background-color, $button-color, $button-color, $button-padding, $button-border-radius );
     cursor: not-allowed;
     &:hover{
-      background: #59d;
+      background: $button-background-color;
     }
   }
 
   &_loading {
-    @include button(#59d, #fff, #fff, $button-padding, $button-border-radius );
+    @include button($button-background-color, $button-color, $button-color, $button-padding, $button-border-radius );
     cursor: wait;
     &:hover{
-      background: #59d;
+      background: $button-background-color;
     }
   }
 
