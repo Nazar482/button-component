@@ -18,21 +18,21 @@ var gulp = require('gulp'),
 
 // Paths
 var path = {
-    build: { //Тут мы укажем куда складывать готовые после сборки файлы
+    build: { 
         pug: 'build/',
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/'
     },
-    src: { //Пути откуда брать исходники
-        pug: 'src/templates/*.pug', //Синтаксис src/*.pug говорит gulp что мы хотим взять все файлы с расширением .pug
-        js: 'src/js/main.js', //В стилях и скриптах нам понадобятся только main файлы
+    src: { 
+        pug: 'src/templates/*.pug',
+        js: 'src/js/main.js', 
         sass: 'src/scss/main.scss',
-        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        img: 'src/img/**/*.*', 
         fonts: 'src/fonts/**/*.*'
     },
-    watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+    watch: { 
         pug: 'src/**/*.pug',
         js: 'src/js/**/*.js',
         sass: 'src/scss/**/*.scss',
@@ -62,43 +62,43 @@ gulp.task('pug:build', function() {
             pretty: true
         }))
         .pipe(plumber())
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(gulp.dest(path.build.pug)) // Записываем собранные файлы
-        .pipe(reload({stream: true})); // даем команду на перезагрузку страницы
+        .pipe(rigger()) 
+        .pipe(gulp.dest(path.build.pug)) 
+        .pipe(reload({stream: true})); 
 });
 
 //Javascript build
 gulp.task('js:build', function () {
-    gulp.src(path.src.js) //Найдем наш main файл
+    gulp.src(path.src.js) 
         .pipe(plumber())
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(uglify()) //Сожмем наш js
-        .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
+        .pipe(rigger()) 
+        .pipe(uglify()) 
+        .pipe(gulp.dest(path.build.js)) 
+        .pipe(reload({stream: true})); 
 });
 
 //Sass build
 gulp.task('sass:build', function () {
-    gulp.src(path.src.sass) //Выберем наш main.scss
+    gulp.src(path.src.sass) 
         .pipe(plumber())
-        .pipe(sass()) //Скомпилируем
-        .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cssmin()) //Сожмем
-        .pipe(gulp.dest(path.build.css)) //И в build
+        .pipe(sass()) 
+        .pipe(prefixer()) 
+        .pipe(cssmin()) 
+        .pipe(gulp.dest(path.build.css)) 
         .pipe(reload({stream: true}));
 });
 
 //Images build
 gulp.task('image:build', function () {
-    gulp.src(path.src.img) //Выберем наши картинки
+    gulp.src(path.src.img) 
         .pipe(plumber())
-        .pipe(imagemin({ //Сожмем их
+        .pipe(imagemin({ 
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
             interlaced: true
         }))
-        .pipe(gulp.dest(path.build.img)) //И бросим в build
+        .pipe(gulp.dest(path.build.img)) 
         .pipe(reload({stream: true}));
 });
 
